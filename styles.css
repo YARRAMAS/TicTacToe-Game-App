@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff7e5f, cyan); /* Linear gradient background */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 360px; /* Increased width for a larger board */
+    height: 360px; /* Increased height for a larger board */
+    margin: 0 auto;
+    padding: 15px; /* Padding inside the border */
+    border: 8px solid #000; /* Increased border thickness */
+    border-radius: 20px; /* Rounded corners for the border */
+    background-color: rgba(255, 255, 255, 0.8); /* Background color for the board */
+}
+
+.cell {
+    background-color: #fff;
+    border: 2px solid #000;
+    position: relative;
+    cursor: pointer;
+    font-size: 4rem; /* Increased font size for better visibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Fixed height */
+    width: 100px; /* Fixed width */
+    border-radius: 20px; /* Curve the edges */
+    transition: background-color 0.3s; /* Smooth color transition */
+}
+
+/* Colors for players */
+.cell.player-x {
+    background-color: red;
+}
+
+.cell.player-o {
+    background-color: yellow; /* Light blue for Player O */
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#message {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: hsl(0, 5%, 4%);
+}
+
+/* Overlay for win/draw screen */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay-content {
+    text-align: center;
+    color: #fff;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#new-game-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
